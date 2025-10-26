@@ -3,7 +3,7 @@ public:
     int maxProfit(vector<int>& p) {
         int bestbuy=p[0];
         int maxProfit = 0;
-        for(int i=0 ;i<p.size();i++){
+        for(int i=1 ;i<p.size();i++){
             if(p[i]>bestbuy){
                 maxProfit = max(maxProfit,p[i]-bestbuy);
             }
