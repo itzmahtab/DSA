@@ -1,20 +1,11 @@
 class Solution {
 public:
-    int singleNumber(vector<int>& a) {
-        unordered_map<int, int> cnt;
+    int singleNumber(vector<int>& nums) {
+        int ans = 0 ;
+        for ( int i =0; i <nums.size();i++){
 
-        // Count frequencies
-        for (int n : a) {
-            cnt[n]++;
+          ans = ans ^ nums[i];  
         }
-
-        // Find number with frequency 1
-        for (auto &pair : cnt) {
-            if (pair.second == 1) {
-                return pair.first;
-            }
-        }
-
-        return -1;
+        return ans;
     }
 };
